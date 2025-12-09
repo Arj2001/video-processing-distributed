@@ -28,6 +28,7 @@ The master automatically:
 - streamlit-autorefresh
 - pandas
 - requests
+for worker only need to install only `requests`
 
 ### System Dependencies (must be installed manually)
 - **MP4Box (GPAC)-(Only needed in master node)**  
