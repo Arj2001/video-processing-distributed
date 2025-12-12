@@ -3,7 +3,7 @@ import requests, time, os, subprocess, sys
 from urllib.parse import urljoin
 
 MASTER = "http://192.168.220.10:5000"   # change to http://<MASTER_IP>:5000 if master on LAN
-WORK_DIR = os.path.join(os.path.dirname(_file_), "worker_tmp")
+WORK_DIR = os.path.join(os.path.dirname(__file__), "worker_tmp")
 os.makedirs(WORK_DIR, exist_ok=True)
 
 WORKER_ID = f"win-laptop-{os.getpid()}"
@@ -68,6 +68,7 @@ def poll_loop():
             print("Worker error:", e)
             time.sleep(5)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     print("Worker starting, MASTER:", MASTER, "WORKER_ID:", WORKER_ID)
+
     poll_loop()
